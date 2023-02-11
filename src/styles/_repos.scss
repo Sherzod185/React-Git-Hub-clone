@@ -1,0 +1,123 @@
+.repos {
+  height: 100%;
+  width: 900px;
+  margin-top: 80px;
+  margin-left: 460px;
+
+  h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color: rgb(203, 205, 209);
+  }
+  .repositoriesContainer {
+    width: 900px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 200px;
+  }
+  .repositoriesBox {
+    width: 100%;
+    display: flex;
+    background-color: #0d1117;
+    padding: 16px;
+    border-bottom: 1.5px solid #2d343a;
+    align-items: center;
+
+    a {
+      font-weight: 900;
+      font-size: 22px;
+      color: #58a6ff;
+      margin-bottom: 30px;
+      transition: all 0.3s linear;
+      border-bottom: 0.8px solid transparent;
+      &:hover {
+        border-bottom: 0.8px solid #5096e6;
+      }
+    }
+  }
+  .repositoriesTop {
+    div {
+      color: #868e98;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  .repositoriesBottom {
+    p {
+      color: #868e98;
+      padding: 3px 7px;
+
+      font-size: 14px;
+      margin-left: 10px;
+      margin-top: -35px;
+      background-color: #0d1117;
+      border-radius: 10px;
+      border: 1px solid #868e98;
+    }
+  }
+}
+.days {
+  margin-left: 10px;
+  display: inline;
+}
+.startBlock {
+  margin-left: auto;
+  img {
+    width: 108px;
+    cursor: pointer;
+  }
+}
+.formBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  input{
+    width: 520px;
+    padding: 9px;
+    border-radius: 7px;
+    background-color: #0D1117;
+    border: none;
+    border: 0.5px solid #868e98;
+    color: aliceblue;
+    &:focus{
+      border: none;
+      outline: 1px solid #1F6FEB;
+    }
+  }
+  button{
+    padding: 7px 14px;
+    display: flex;
+    border: none;
+    align-items: center;
+    background-color: #21262D;
+    border: 0.5px solid #A8AFB7;
+    color: #A8AFB7;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    &:hover{
+      background-color: #64676c;
+    }
+  }
+  a{
+      display: flex;
+    align-items: center;
+     font-weight: 700;
+    transition: all 0.3s linear;
+    padding: 5px 10px;
+    background-color: #1F6FEB;
+border-radius: 5px;
+  border: 0.5px solid #A8AFB7;
+    &:hover{
+      background-color: #5095fb;
+    }
+  }
+}

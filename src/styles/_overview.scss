@@ -1,0 +1,88 @@
+.html1 {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background-color: #e34c26;
+  border-radius: 50%;
+}
+.javaScript1 {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background-color: #f1e05a;
+  border-radius: 50%;
+}
+.overview {
+  width: 900px;
+margin-top:80px;
+margin-left: 460px;
+
+  h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    color: rgb(203, 205, 209);
+  }
+  .repositoriesContainer {
+    width: 900px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+     gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .repositoriesBox {
+    width: 440px;
+    display: flex;
+    background-color: #0d1117;
+    padding: 16px;
+    border: 0.7px solid #2d343a;
+    justify-content: space-between;
+    border-radius: 8px;
+
+    a {
+      font-weight: 600;
+      font-size: 14px;
+      color: #5096e6;
+      margin-bottom: 30px;
+      transition: all 0.3s linear;
+      border-bottom: 0.8px solid transparent;
+      &:hover{
+        border-bottom: 0.8px solid #5096e6;
+      }
+    }
+  }
+  .repositoriesTop{
+    div{
+      color: #868E98;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  .repositoriesBottom{
+    p{
+      color: #868E98;
+     padding:3px 7px;
+    
+      font-size: 14px;
+      margin-top: -5px;
+      background-color: #0D1117;
+      border-radius: 10px;
+      border: 1px solid #868E98;
+    }
+  }
+  .imgBlock{
+    margin-top: 50px;
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+}
+h3{
+  color: #868E98;
+}

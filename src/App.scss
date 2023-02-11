@@ -1,0 +1,32 @@
+@import "./styles//navbar";
+@import "./styles/main";
+@import "./styles/profile";
+@import "./styles/footer";
+@import "./styles/layout";
+@import "./styles/followa";
+@import "./styles/repos";
+@import "./styles//followersa";
+@import "./styles//menu";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+.App{
+  background-color: #0D1117;
+  height: 100%;
+}
+a{
+  display: inline-block;
+  color: #fff;
+}
+button{
+  border: none;
+  border-radius: 5px;
+}
+body{
+  background-color: #0D1117;
+  
+}

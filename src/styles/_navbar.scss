@@ -1,0 +1,103 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161b22;
+  color: #fff;
+  height: 60px;
+  padding: 2px 28px;
+  position: sticky;
+  z-index: 50;
+  top: 0;
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    img {
+      width: 40px;
+      object-fit: contain;
+    }
+  
+    input {
+      width: 260px;
+      height: 27px;
+      background-color: #0d1117;
+      margin-left: 10px;
+      font-size: 13px;
+      padding-left: 10px;
+      font-weight: 500;
+      border: 0.01px solid #5a5856;
+      border-radius: 4px;
+      color: #fff;
+      outline: none;
+    }
+    input::placeholder{
+      color: #ffffff94;
+    }
+    input:focus {
+      width: 400px;
+      transition: width ease-out 0.3s;
+    }
+  }
+  .navCenter{
+    flex: 1;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-left: 18px;
+    color: #fff;
+    h2{
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+      transition: 0.3s all;
+      position: relative;
+    }
+    h2:hover{
+      color: #ffffff68;
+    }
+  }
+  .navRight{
+    position: relative;
+    display: flex;align-items: center;
+    width: 110px;
+    justify-content: space-between;
+  span{
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      display: block;
+      background-color: #1D80F3;
+      border-radius: 50%;
+      top: 0;
+      left: 7px;
+    }
+    >*{
+      cursor: pointer;
+    }
+    img{
+width: 20px;
+object-fit: contain;
+border-radius: 50%;
+    }
+    .navRightIcons{
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+.a{
+  display: inline;
+  width: 110px;
+  height: 2.2px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+}
+.b{
+  display: flex;
+  flex-direction: column;
+}
