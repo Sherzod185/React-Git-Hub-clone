@@ -3,6 +3,7 @@ import Main from "./components/Main";
 import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Reponsive from "./components/Reponsive";
+import Startings from "./components/Startings";
 import MainLayout from "./layout/layout";
 import Overview from "./components/Overview";
 import Followers from "./components/Followers";
@@ -13,8 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/layout" element={<MainLayout />}>
-          <Route path="/layout" element={<Overview />} />
+          <Route index element={<Overview />} />
           <Route path="reponsive" element={<Reponsive />} />{" "}
+          <Route path="startings" element={<Startings />} />
           <Route path="followings" element={<Followings />} />
           <Route path="followers" element={<Followers />} />
         </Route>
@@ -38,7 +40,17 @@ function App() {
                   alt="page not found"
                 />
               </div>
-              <Link className="notFountPage" style={{display:"block", textAlign:"center", marginTop:"50px"}} to="/">GO BACK GITHUB CLONE</Link>
+              <Link
+                className="notFountPage"
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  marginTop: "50px",
+                }}
+                to="/"
+              >
+                GO BACK GITHUB CLONE
+              </Link>
             </div>
           }
         />

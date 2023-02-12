@@ -72,10 +72,16 @@
   display: inline;
 }
 .startBlock {
+  width: 150px;
   margin-left: auto;
+  border-bottom: 2px solid #0A4027;
+  border-end-start-radius: 2px;
+ 
   img {
     width: 108px;
+    margin-left: 50px;
     cursor: pointer;
+    margin-bottom: 15px;
   }
 }
 .formBlock {

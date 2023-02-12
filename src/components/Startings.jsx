@@ -3,18 +3,17 @@ import Footer from "./Footer";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import start from "../img/abs.jpg";
-import iconSvg from "../img/icon.svg";
-import stargazen from "../img/stargazent.jpg";
+import start from "../img/stargazent.jpg";
 import { IoMdArrowDropdown } from "react-icons/io";
-const Reponsive = () => {
+const Startings = () => {
   const [changes, setChanges] = useState("");
   const [datas, setDatas] = useState([]);
   useEffect(() => {
-    axios.get(`https://api.github.com/users/Sherzod185/repos`).then((data) => {
-      setDatas(data?.data);
-      
-    });
+    axios
+      .get(`https://api.github.com/users/Sherzod185/starred`)
+      .then((data) => {
+        setDatas(data?.data);
+      });
   }, []);
   const searchs = (e) => {
     setChanges(e.target.value);
@@ -27,12 +26,13 @@ const Reponsive = () => {
       <div className="repos">
         <div className="formBlock">
           <input
+          style={{width:"460px"}}
             onChange={searchs}
             type="search"
             placeholder="Find a repository..."
           />
           <button>
-            Type
+            Type: All
             <IoMdArrowDropdown />
           </button>
           <button>
@@ -40,14 +40,10 @@ const Reponsive = () => {
             <IoMdArrowDropdown />
           </button>
           <button>
-            Sort
+            Sort by:Recently starred
             <IoMdArrowDropdown />
           </button>
 
-          <a target="_" href="https://github.com/new">
-            <img src={iconSvg} alt="" />
-            New
-          </a>
         </div>
         <div className="repositories">
           <div className="repositoriesContainer">
@@ -84,16 +80,7 @@ const Reponsive = () => {
                       <p>public</p>
                     </div>
                     <div className="startBlock">
-                      {el.stargazers_count === 0 ? (
-                        <img src={start} alt="img" />
-                      ) : (
-                        <img
-                          style={{ width: "130px", marginLeft: "20px" }}
-                          src={stargazen}
-                          alt="img"
-                        />
-                      )}
-
+                      <img style={{width:"130px", marginLeft:"20px"}} src={start} alt="img" />
                       <div className="greenLine"></div>
                     </div>
                   </div>
@@ -109,4 +96,4 @@ const Reponsive = () => {
   );
 };
 
-export default Reponsive;
+export default Startings;

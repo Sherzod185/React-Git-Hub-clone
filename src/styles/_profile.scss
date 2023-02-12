@@ -19,8 +19,12 @@
       padding: 4px;
       border-radius: 4px;
       cursor: pointer;
+      .a{
+        border-bottom:2.2px solid #BC6552;
+      }
       &:hover{
         background-color: #3f3c3c;
+      
       }
       h2{
         font-size: 15px;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import img1 from "../img/logo1.svg";
 import { FiBell, FiPlus } from "react-icons/fi";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -6,13 +6,28 @@ import Menu from "./Menu";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
+
 const Navbar = () => {
+  const a = useRef();
   const [img, setImg] = React.useState([]);
+  const [searchs, setSearchs] = useState("");
   useEffect(() => {
     axios.get(`https://api.github.com/users/Sherzod185/repos`).then((data) => {
       setImg(data?.data);
+      setSearchs("");
     });
   }, []);
+  const searching = (e) => {
+    setSearchs(e.target.value);
+  };
+
+  const click = () => {
+    a.current.style.width = "400px";
+  };
+  const clickclcik = () => {
+    a.current.style.width = "260px";
+  };
+
   const [showMenu, setShowMenu] = useState(false);
   return (
     <nav className="navbar">
@@ -21,12 +36,25 @@ const Navbar = () => {
         <Link to="/">
           <img src={img1} alt="logo" />
         </Link>
+
         <div>
           <input
+            ref={a}
+            onClick={click}
+            value={searchs}
+            onChange={searching}
             className="inputLeft"
             type="search"
             placeholder="Search or jump to ..."
           />
+
+          <Link
+            className="saerch"
+            onClick={clickclcik}
+            to={"https://github.com/" + searchs}
+          >
+            Search
+          </Link>
         </div>
       </div>
       {/* center */}

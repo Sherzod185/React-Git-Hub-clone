@@ -5,14 +5,14 @@ import Profile from "../components/pages/Profile";
 import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
-
+  const [starLine, setStarLine] = React.useState(0)
   return (
     <>
       <Navbar />
       <div className="BLOCK">
-        <Profile  />
+        <Profile setStarLine={setStarLine} starLine={starLine} />
         <div className="BLOCK">
-          <Left/>
+          <Left setStarLine={setStarLine} starLine={starLine} />
           <div className="AOUTLET">
             <Outlet />
           </div>

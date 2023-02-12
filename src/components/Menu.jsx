@@ -15,7 +15,7 @@ const Menu = () => {
 
         <div className="lineThere"></div>
         <p>
-          <Link to="/">You profile</Link>
+          <Link to="/layout">You profile</Link>
         </p>
         <p>
           <Link to="/layout/reponsive">You repositories</Link>

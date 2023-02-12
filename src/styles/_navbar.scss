@@ -22,7 +22,7 @@
   
     input {
       width: 260px;
-      height: 27px;
+      height: 30px;
       background-color: #0d1117;
       margin-left: 10px;
       font-size: 13px;
@@ -36,10 +36,22 @@
     input::placeholder{
       color: #ffffff94;
     }
-    input:focus {
-      width: 400px;
-      transition: width ease-out 0.3s;
-    }
+.saerch{
+  padding: 4px 15px;
+  border-radius: 5px;
+  background-color: #1F6FEB;
+  font-size: 14px;
+  margin-left: 10px;
+  transition: 0.2s all linear;
+  &:hover{
+    background-color: #234c8b;
+    transform: translateY(-1.4px);
+  }
+    &:active{
+    background-color: #1F6FEB;
+    transform: translateY(1.4px);
+  }
+}
   }
   .navCenter{
     flex: 1;

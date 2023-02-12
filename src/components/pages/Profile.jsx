@@ -5,52 +5,50 @@ import { FiBox, FiStar } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
-const Profile = () => {
+const Profile = ({ starLine, setStarLine }) => {
   const [count, setCount] = React.useState([]);
-  const sher = React.useRef();
-  const beh = React.useRef();
-
-  const rang2 = () => {
-    return (
-      (beh.current.style.borderBottom = "2.2px solid #BC6552"),
-      (sher.current.style.borderBottom = "2.2px solid transparent")
-    );
-  };
-
- 
-  const rang1 = () => {
-    return (
-      (sher.current.style.borderBottom = "2.2px solid #BC6552"),
-      (beh.current.style.borderBottom = "2.2px solid transparent")
-    );
-  };
+  const [starts, setStarts] = React.useState([]);
 
   useEffect(() => {
     axios.get(`https://api.github.com/users/Sherzod185/repos`).then((data) => {
       setCount(data?.data);
     });
   }, []);
+  useEffect(() => {
+    axios
+      .get(`https://api.github.com/users/Sherzod185/starred`)
+      .then((data) => {
+        setStarts(data?.data);
+      });
+      if (window.location.pathname === "/layout/reponsive") {
+        setStarLine(2)
+      } else if(window.location.pathname === "/layout/startings"){
+         setStarLine(3);
+      }
+  }, []);
   return (
     <div className="profile">
       <nav>
-        <div className="profileIcon">
-          <div className="b">
-            <Link onClick={rang1} className="graf" to="/layout">
-              <TbBook />
-              <h2>Overview</h2>
-            </Link>
-            <div ref={sher} className="a"></div>
+        <Link onClick={() => setStarLine(0)} className="graf" to="/layout">
+          <div className="profileIcon">
+            <TbBook />
+            <h2>Overview</h2>
+            {starLine === 0 ? <div className="a"></div> : ""}
           </div>
-        </div>
-        <div className="profileIcon">
-          <Link onClick={rang2} className="graf" to="/layout/reponsive">
+        </Link>
+        <Link
+          onClick={() => setStarLine(2)}
+          className="graf"
+          to="/layout/reponsive"
+        >
+          <div className="profileIcon">
             <TbBook2 />
             <h2>
-              Repositories <span>{count.length + 27}</span>
+              Repositories <span>{count.length}</span>
             </h2>
-          </Link>
-          <div ref={beh} className="a"></div>
-        </div>
+            {starLine === 2 ? <div className="a"></div> : ""}
+          </div>
+        </Link>
         <div className="profileIcon">
           <AiOutlineInbox />
           <h2>Projects</h2>
@@ -58,11 +56,21 @@ const Profile = () => {
         <div className="profileIcon">
           <FiBox />
           <h2>Packages</h2>
+       
         </div>
-        <div className="profileIcon">
-          <FiStar />
-          <h2>Start</h2>
-        </div>
+        <Link
+          onClick={() => setStarLine(3)}
+          className="graf"
+          to="/layout/startings"
+        >
+          <div className="profileIcon">
+            <FiStar />
+            <h2>
+              Start <span>{starts.length}</span>
+            </h2>
+            {starLine === 3 ? <div className="a"></div> : ""}
+          </div>
+        </Link>
       </nav>
       <div className="lineFour"> </div>
       <div className="sectionCenter"></div>

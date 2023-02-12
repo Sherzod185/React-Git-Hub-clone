@@ -5,13 +5,15 @@ import axios from "axios";
 import rasm2 from "../img/img2.jpg";
 import rasm from "../img/rasm.jpg";
 import Footer from "./Footer";
+import { FiStar } from "react-icons/fi";
+import pen from "../img/pen.svg";
+
 const Overview = () => {
   const [datas, setDatas] = useState([]);
   const [count, setCount] = useState(8);
   useEffect(() => {
     axios.get(`https://api.github.com/users/Sherzod185/repos`).then((data) => {
       setDatas(data?.data);
-      console.log(data);
     });
   }, []);
   const showMore = () => {
@@ -23,8 +25,19 @@ const Overview = () => {
   };
   return (
     <div>
-
       <div className="overview">
+        <div className="devoleper">
+          <div>
+            <p className="sherzod185">Sherzod185/README.md</p>
+            <img src={pen} alt="pen" />
+          </div>
+          <a href="https://git.io/typing-svg">
+            <img
+              src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=14F728&width=435&lines=I+am+a+frontend+developer.+++;I+have+completed+the+frontend+React+course."
+              alt="Typing SVG"
+            />
+          </a>
+        </div>
         <div className="repositories">
           <div className="repositoriesTitle">
             <h2>Popular repositories</h2>
@@ -46,7 +59,7 @@ const Overview = () => {
                         <a target="_" href={el.svn_url}>
                           {el.name}
                         </a>
-                        <div>
+                        <div style={{ display: "flex", alignItems: "center" }}>
                           {el.language === "HTML" ? (
                             <div>
                               <span className="html1"></span> {el.language}
@@ -56,6 +69,21 @@ const Overview = () => {
                               <span className="javaScript1"></span>{" "}
                               {el.language}
                             </div>
+                          )}
+                          {el.stargazers_count === 0 ? (
+                            ""
+                          ) : (
+                            <p
+                              style={{
+                                display: "flex",
+                                margin: "0",
+                                marginLeft: "8px",
+                              }}
+                              className="startgazen"
+                            >
+                              <FiStar />
+                              {el.stargazers_count}
+                            </p>
                           )}
                         </div>
                       </div>

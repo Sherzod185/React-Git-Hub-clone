@@ -1,5 +1,5 @@
-import React from 'react'
-import img1 from "../img/logo1.svg"
+import React from "react";
+import img1 from "../img/logo1.svg";
 const Footer = () => {
   return (
     <div className="footer">
@@ -29,6 +29,6 @@ const Footer = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Footer
+export default Footer;
